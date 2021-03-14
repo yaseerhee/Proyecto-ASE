@@ -26,10 +26,12 @@ if (isset($_SESSION["id_Usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Solidaridad Esperanza</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+    <!------------------------ MENU PRINCIPAL ------------------------------->
     <nav class="navbar navbar-inverse bg-primary">
         <div class="container-fluid">
             <ul class="nav navbar-nav m-4">
@@ -53,13 +55,222 @@ if (isset($_SESSION["id_Usuario"])) {
         </div>
     </nav>
 
+    <!-------------------------------------- cuerpo --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div class="container p-3">
         <!-- EN EL CASO DE QUE LA VARIABLE USAURIO NO ESTE VACÍA, SIGNIFICA QUE TENEMOS UNA SESION INICIADA, ASÍ QUE VA A DEVOLVER ESTO  -->
         <?php if (!empty($usuario)) { ?>
             <h4 class="blockquote-footer text-success">Bienvenido: <em><?= $usuario[1] ?></h4>
         <?php } ?>
+        <!------------------------------- Menu secundario ------------------------------------------------------------------->
+        <header>
+            <nav id="nav" class="nav1">
+                <nav class="navbar navbar-inverse bg-primary">
+                    <div class="container-fluid">
+                        <div class="enlaces" id="enlaces">
+                            <button class="btn btn-primary btn-header"><a href="#" id="enlace-inicio">inicio</a></button>
+                            <button class="btn btn-primary btn-header"><a href="#" id="enlace-aboutUs">¿Quiénes somos?</a></button>
+                            <button class="btn btn-primary btn-header"><a href="#" id="enlace-trabajo">¿Qué hacemos?</a></button>
+                            <button class="btn btn-primary btn-header"><a href="#" id="enlace-contacto">Contacto</a></button>
+                        </div>
+                        <div class="icono" id="open">
+                            <span>&#9776;</span>
+                        </div>
+                    </div>
+                </nav>
+            </nav>
+        </header>
 
-        
+        <!------------------ Cuepo pagina web ------------------------------------------------------------------>
+        <main class="m-2">
+            <!-------------------- SLIDER -------------------------------------------------------->
+            <div id="slider">
+                <div class="slide-contenedor">
+                    <div class="miSlider fade">
+                        <img src="img/img-1-slider.jpg">
+                    </div>
+                    <div class="miSlider fade">
+                        <img src="img/img-2-slider-1.jpg">
+                    </div>
+                    <div class="miSlider fade">
+                        <img src="img/img-3-slider.jpg">
+                    </div>
+                    <div class="direcciones">
+                        <a href="" class="anterior" onclick="avanzaSlide(-1)">&#10094;</a>
+                        <a href="" class="siguiente" onclick="avanzaSlide(1)">&#10095;</a>
+                    </div>
+                    <div class="barras">
+                        <span class="barra active" onclick="posicionSlide(1)"></span>
+                        <span class="barra" onclick="posicionSlide(2)"></span>
+                        <span class="barra" onclick="posicionSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+            <!-------------------- QUIENES SOMOS -------------------------------------------------------->
+            <section class="team contenedor" id="aboutUs">
+                <h2 class="text-primary">¿Quiénes somos?</h2>
+                <hr>
+                <p class="after"><strong>Asociación Solidaridad Esperanza - Organización no gubernamental (ONG) </strong></p>
+
+                <article>
+                    Somos una asociación sin ánimo de lucro fundada el 21 de junio de 2014,
+                    dirigida por personas voluntarias conscientes de la realidad de las
+                    personas más vulnerables del municipio de Getafe.
+                </article>
+                <br>
+                <h4 class="text-primary">MISIÓN</h4>
+                <article>
+                    Nuestra misión es la atención directa e inmediata a las familias y personas que nos solicitan ayuda para mejorar su situación personal y con ello mejorar la convivencia de la comunidad getafense.
+                    Buscamos soluciones eficaces para las diversas problemáticas que se derivan de las situaciones de exclusión. A la vez queremos generar procesos de inclusión, creando redes que fomenten la convivencia y la solidaridad entre las distintas comunidades culturales, las asociaciones, las entidades públicas y las empresas, con el objetivo
+                    de dar respuesta también a las necesidades a medio y largo plazo.
+                </article>
+                <br>
+                <h4 class="text-primary">HISTORIA</h4>
+                <article>
+                    La asociación nació con el objetivo de establecer proyectos y actividades que fomentaran la convivencia y la solidaridad intercultural.
+                    Sin embargo, la situación socioeconómica de un buen número de familias de este, nuestro pueblo, hizo que la asociación replanteara su objetivo principal, creando así una red de distribución y cooperación con diferentes bancos de alimentos para cubrir la urgente necesidad de alimentación. En la actualidad este es nuestro principal proyecto ya que el acceso a recursos
+                    alimenticios sigue siendo algo prohibitivo para muchas personas.
+                </article>
+                <br>
+                <h4 class="text-primary">VALORES</h4>
+                <article>
+                    Las personas voluntarias de la asociación compartimos valores como la solidaridad, el respeto, la igualdad y la transparencia. Estos son los principios que nos guían en la práctica y nos ayudan a permanecer como una unidad sin fisuras, nuestra diversidad de perfiles profesionales y nacionalidades nos enriquece y fortalece.
+                </article>
+            </section>
+            <!-------------------------- QUE HACEMOS ------------------------------------------------>
+            <br>
+            <section class="work contenedor" id="trabajo">
+                <h2 class="text-primary">¿Qué hacemos?</h2>
+                <hr>
+                <p class="after">Hacemos de algo simple algo extraordinario</p>
+                <div class="botones-work">
+                    <nav class="navbar navbar-inverse bg-primary">
+                        <div class="container-fluid">
+                            <ul>
+                                <button class="btn btn-primary">
+                                    <a class="filter active" data-nombre='todos'>Todos</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='diseño'>Intervención</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='programacion'>Interculturalidad</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='marketing'>Infancia</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='marketing'>Refugiados</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='marketing'>Acompañamiento</a>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <a class="filter" data-nombre='marketing'>Redes Asociativas</a>
+                                </button>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="galeria-work">
+                    <div class="cont-work programacion">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>175</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work programacion">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Priego 2018</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work programacion">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Salduero 2019</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work diseño">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Carabanchel</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work diseño">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Fnac</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work diseño">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Retiro</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work marketing">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Formacion trabajo en equipo</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work marketing">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Formacion bullying</h4>
+                        </div>
+                    </div>
+                    <div class="cont-work marketing">
+                        <div class="img-work">
+                        </div>
+                        <div class="textos-work">
+                            <h4>Formacion liderazgo</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="work contenedor" id="sugerencias">
+                <h3>Sugerencias</h3>
+                <div class="formulario">
+                    <form action="contact.php" method="post">
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido" required="" />
+                        <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" required="" />
+                        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
+                        <input id="submit" type="submit" name="submit" value="Enviar" />
+                    </form>
+                </div>
+            </section>
+
+        </main>
+        <footer id="contacto">
+            <div class="footer contenedor">
+                <div class="marca-logo">
+                    <img src="img/ymca_logo.png" alt="">
+                </div>
+                <div class="iconos">
+                    <i class="fab "></i>
+                    <i class="fab "></i>
+                    <i class="fab "></i>
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/filtro.js"></script>
+
+
+        </main>
+
     </div>
 </body>
 
