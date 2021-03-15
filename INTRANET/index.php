@@ -72,9 +72,6 @@ if (isset($_SESSION["id_Usuario"])) {
                             <button class="btn btn-primary btn-header"><a href="#" id="enlace-trabajo">¿Qué hacemos?</a></button>
                             <button class="btn btn-primary btn-header"><a href="#" id="enlace-contacto">Contacto</a></button>
                         </div>
-                        <div class="icono" id="open">
-                            <span>&#9776;</span>
-                        </div>
                     </div>
                 </nav>
             </nav>
@@ -86,13 +83,13 @@ if (isset($_SESSION["id_Usuario"])) {
             <div id="slider">
                 <div class="slide-contenedor">
                     <div class="miSlider fade">
-                        <img src="img/img-1-slider.jpg">
+                        <img src="img/slider/img-1-slider.jpg">
                     </div>
                     <div class="miSlider fade">
-                        <img src="img/img-2-slider-1.jpg">
+                        <img src="img/slider/img-2-slider-1.jpg">
                     </div>
                     <div class="miSlider fade">
-                        <img src="img/img-3-slider.jpg">
+                        <img src="img/slider/img-3-slider.jpg">
                     </div>
                     <div class="direcciones">
                         <a href="" class="anterior" onclick="avanzaSlide(-1)">&#10094;</a>
@@ -150,111 +147,201 @@ if (isset($_SESSION["id_Usuario"])) {
                                     <a class="filter active" data-nombre='todos'>Todos</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='diseño'>Intervención</a>
+                                    <a class="filter" data-nombre='intervencion'>Intervención</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='programacion'>Interculturalidad</a>
+                                    <a class="filter" data-nombre='interculturalidad'>Interculturalidad</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='marketing'>Infancia</a>
+                                    <a class="filter" data-nombre='infancia'>Infancia</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='marketing'>Refugiados</a>
+                                    <a class="filter" data-nombre='refugiados'>Refugiados</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='marketing'>Acompañamiento</a>
+                                    <a class="filter" data-nombre='acompanamiento'>Acompañamiento</a>
                                 </button>
                                 <button class="btn btn-primary">
-                                    <a class="filter" data-nombre='marketing'>Redes Asociativas</a>
+                                    <a class="filter" data-nombre='asocia'>Redes Asociativas</a>
                                 </button>
-
                             </ul>
                         </div>
                     </nav>
                 </div>
-                <div class="galeria-work">
-                    <div class="cont-work programacion">
-                        <div class="img-work">
+                <div class="galeria-work m-3">
+                    <br>
+                    <div class="row">
+                        <div class="cont-work intervencion col-5 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Distribución de alimentos</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/img-que-hacemos-comida-2.jpeg" width="400" height="600">
+                            </div>
                         </div>
-                        <div class="textos-work">
-                            <h4>175</h4>
-                        </div>
-                    </div>
-                    <div class="cont-work programacion">
-                        <div class="img-work">
-                        </div>
-                        <div class="textos-work">
-                            <h4>Priego 2018</h4>
-                        </div>
-                    </div>
-                    <div class="cont-work programacion">
-                        <div class="img-work">
-                        </div>
-                        <div class="textos-work">
-                            <h4>Salduero 2019</h4>
+                        <div class="cont-work intervencion col-5 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Colaboración Banco de alimentos</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/img-q-hacemos.jpeg" width="400" height="500">
+                            </div>
                         </div>
                     </div>
-                    <div class="cont-work diseño">
-                        <div class="img-work">
+                    <div class="row">
+                        <div class="cont-work interculturalidad col-5 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Actos Culturales</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-actoCultural.jpg" width="400">
+                            </div>
                         </div>
-                        <div class="textos-work">
-                            <h4>Carabanchel</h4>
-                        </div>
-                    </div>
-                    <div class="cont-work diseño">
-                        <div class="img-work">
-                        </div>
-                        <div class="textos-work">
-                            <h4>Fnac</h4>
-                        </div>
-                    </div>
-                    <div class="cont-work diseño">
-                        <div class="img-work">
-                        </div>
-                        <div class="textos-work">
-                            <h4>Retiro</h4>
+                        <div class="cont-work interculturalidad col-5 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Fiesta del cordero</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/cordero.jpg" width="400">
+                            </div>
                         </div>
                     </div>
-                    <div class="cont-work marketing">
-                        <div class="img-work">
+                    <div class="row">
+                        <hr>
+                        <div class="cont-work infancia col-4 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Distribución de Juguetes</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/juguetes.jpg" width="400">
+                            </div>
                         </div>
-                        <div class="textos-work">
-                            <h4>Formacion trabajo en equipo</h4>
+                        <div class="cont-work infancia col-4 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Talleres Lúdicos</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-talleres.jpg" width="400">
+                            </div>
+                        </div>
+                        <div class="cont-work infancia col-4 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Apoyo Escolar</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-apoyo.jpg" width="400">
+                            </div>
                         </div>
                     </div>
-                    <div class="cont-work marketing">
-                        <div class="img-work">
+                    <div class="row">
+                        <hr>
+                        <div class="cont-work refugiados col-6 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Cena Solidaria</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid img-responsive" src="img/que-hacemos/cenaRefugiados.jpg" width="400">
+                            </div>
                         </div>
-                        <div class="textos-work">
-                            <h4>Formacion bullying</h4>
+                        <div class="cont-work refugiados col-6 p-2">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Envíos de alimentos a refugiados en Grecia</h4>
+                            </div>
+                            <div class="img-work">
+                                <img class="img-fluid img-responsive" src="img/que-hacemos/refugiados.jpg" width="400">
+                            </div>
                         </div>
                     </div>
-                    <div class="cont-work marketing">
-                        <div class="img-work">
+                    <div class="row">
+                        <hr>
+                        <div class="cont-work acompanamiento col-12">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Acompañamiento de casos</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Citas médicas u acompañamiento en el hospital</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Gestiones administrativas</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Asesoramiento jurídico</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Entidades (Instituto de la mujer, CAID, etc.)</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="textos-work">
-                            <h4>Formacion liderazgo</h4>
+                    </div>
+                    <div class="row">
+                        <hr>
+                        <div class="cont-work asocia col-12">
+                            <div class="textos-work">
+                                <h4 class="text-center text-primary">Redes Asociativas</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Protección Civil</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Cáritas</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Plataforma Alimentaria</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Mesa de convivencia</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">SOS Alhóndiga</li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">Colaboración con el equipo de paliativos de Getafe</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="work contenedor" id="sugerencias">
-                <h3>Sugerencias</h3>
-                <div class="formulario">
-                    <form action="contact.php" method="post">
-                        <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido" required="" />
-                        <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" required="" />
-                        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
-                        <input id="submit" type="submit" name="submit" value="Enviar" />
-                    </form>
+            <section class="work contenedor" id="contacto">
+                <h3 class="text-center header">Contáctanos</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well well-sm">
+                            <form class="form-horizontal" action="email/email.php" method="post">
+                                <fieldset>
+                                    <div class="form-group align-items-center">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </section>
 
         </main>
-        <footer id="contacto">
-            <div class="footer contenedor">
+        <footer>
+            <div class="footer">
                 <div class="marca-logo">
-                    <img src="img/ymca_logo.png" alt="">
+                    <img src="img/logo_asociacion.jpg" width="25px" height="25px">
                 </div>
                 <div class="iconos">
                     <i class="fab "></i>
