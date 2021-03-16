@@ -17,6 +17,30 @@ if (isset($_SESSION["id_Usuario"])) {
     }
 }
 
+
+if (isset($_POST['email'])) {
+    $emailA = "mohamedyaserhaddad@gmail.com";
+    $emailAsunto = "Contacto desde la Web";
+
+    if (!isset($_POST["nombre"]) || !isset($_POST["apellido"]) || !isset($_POST["email"]) || !isset($_POST["telefono"]) || !isset($_POST["mensaje"])) {
+        echo "<script>alert('Error. Rellene todos los campos');</script>";
+        echo "Por favor, vuelva atrás";
+        die();
+    }
+
+    $emailMensaje = "Detalles del formulario de contacto: \n\n";
+    $emailMensaje .= "Nombre: " . $_POST["nombre"] . "\n";
+    $emailMensaje .= "Apellidos: " . $_POST["apellido"] .  "\n";
+    $emailMensaje .= "E-mail: " . $_POST["email"] .  "\n";
+    $emailMensaje .= "Telefono: " . $_POST["telefono"] .  "\n";
+    $emailMensaje .= "Mensaje: " . $_POST["mensaje"] .  "\n";
+
+    $headers = 'From: ' . $_POST["email"] . "\r\n" . 'RespondeA: ' . $emailA . "\r\n" . "X-Mailer: PHP/" . phpversion();
+    @mail($emailA, $emailAsunto, $emailMensaje, $headers);
+
+    echo "<script> alert('El formulario se envío con éxito');</script>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -289,18 +313,18 @@ if (isset($_SESSION["id_Usuario"])) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="well well-sm">
-                            <form class="form-horizontal" action="email/email.php" method="post">
+                            <form class="form-horizontal" action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
                                 <fieldset>
                                     <div class="form-group align-items-center">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                            <input id="fname" name="nombre" type="text" placeholder="First Name" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                            <input id="lname" name="apellido" type="text" placeholder="Last Name" class="form-control">
                                         </div>
                                     </div>
 
@@ -314,14 +338,14 @@ if (isset($_SESSION["id_Usuario"])) {
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                            <input id="phone" name="telefono" type="text" placeholder="Phone" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                            <textarea class="form-control" id="message" name="mensaje" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
                                         </div>
                                     </div>
 
@@ -341,7 +365,7 @@ if (isset($_SESSION["id_Usuario"])) {
         <footer>
             <div class="footer">
                 <div class="marca-logo">
-                    <img src="img/logo_asociacion.jpg" width="25px" height="25px">
+                    <img src="img/logo_asociacion.jpg" width="50px" height="50px">
                 </div>
                 <div class="iconos">
                     <i class="fab "></i>
