@@ -17,30 +17,6 @@ if (isset($_SESSION["id_Usuario"])) {
     }
 }
 
-
-if (isset($_POST['email'])) {
-    $emailA = "mohamedyaserhaddad@gmail.com";
-    $emailAsunto = "Contacto desde la Web";
-
-    if (!isset($_POST["nombre"]) || !isset($_POST["apellido"]) || !isset($_POST["email"]) || !isset($_POST["telefono"]) || !isset($_POST["mensaje"])) {
-        echo "<script>alert('Error. Rellene todos los campos');</script>";
-        echo "Por favor, vuelva atrás";
-        die();
-    }
-
-    $emailMensaje = "Detalles del formulario de contacto: \n\n";
-    $emailMensaje .= "Nombre: " . $_POST["nombre"] . "\n";
-    $emailMensaje .= "Apellidos: " . $_POST["apellido"] .  "\n";
-    $emailMensaje .= "E-mail: " . $_POST["email"] .  "\n";
-    $emailMensaje .= "Telefono: " . $_POST["telefono"] .  "\n";
-    $emailMensaje .= "Mensaje: " . $_POST["mensaje"] .  "\n";
-
-    $headers = 'From: ' . $_POST["email"] . "\r\n" . 'RespondeA: ' . $emailA . "\r\n" . "X-Mailer: PHP/" . phpversion();
-    @mail($emailA, $emailAsunto, $emailMensaje, $headers);
-
-    echo "<script> alert('El formulario se envío con éxito');</script>";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -195,17 +171,17 @@ if (isset($_POST['email'])) {
                 <div class="galeria-work m-3">
                     <br>
                     <div class="row">
-                        <div class="cont-work intervencion col-5 p-2">
+                        <div class="cont-work intervencion col-5">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Distribución de alimentos</h4>
+                                <h4 class="text-center text-primary p-2">Distribución de alimentos</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/img-que-hacemos-comida-2.jpeg" width="400" height="600">
                             </div>
                         </div>
-                        <div class="cont-work intervencion col-5 p-2">
+                        <div class="cont-work intervencion col-5">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Colaboración Banco de alimentos</h4>
+                                <h4 class="text-center text-primary p-2">Colaboración Banco de alimentos</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/img-q-hacemos.jpeg" width="400" height="500">
@@ -213,17 +189,17 @@ if (isset($_POST['email'])) {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="cont-work interculturalidad col-5 p-2">
+                        <div class="cont-work interculturalidad col-5">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Actos Culturales</h4>
+                                <h4 class="text-center text-primary p-2">Actos Culturales</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-actoCultural.jpg" width="400">
                             </div>
                         </div>
-                        <div class="cont-work interculturalidad col-5 p-2">
+                        <div class="cont-work interculturalidad col-5">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Fiesta del cordero</h4>
+                                <h4 class="text-center text-primary p-2">Fiesta del cordero</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/cordero.jpg" width="400">
@@ -232,25 +208,25 @@ if (isset($_POST['email'])) {
                     </div>
                     <div class="row">
                         <hr>
-                        <div class="cont-work infancia col-4 p-2">
+                        <div class="cont-work infancia col-4">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Distribución de Juguetes</h4>
+                                <h4 class="text-center text-primary p-2">Distribución de Juguetes</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/juguetes.jpg" width="400">
                             </div>
                         </div>
-                        <div class="cont-work infancia col-4 p-2">
+                        <div class="cont-work infancia col-4">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Talleres Lúdicos</h4>
+                                <h4 class="text-center text-primary p-2">Talleres Lúdicos</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-talleres.jpg" width="400">
                             </div>
                         </div>
-                        <div class="cont-work infancia col-4 p-2">
+                        <div class="cont-work infancia col-4">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Apoyo Escolar</h4>
+                                <h4 class="text-center text-primary p-2">Apoyo Escolar</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid" src="img/que-hacemos/img-q-hacemos-apoyo.jpg" width="400">
@@ -259,17 +235,17 @@ if (isset($_POST['email'])) {
                     </div>
                     <div class="row">
                         <hr>
-                        <div class="cont-work refugiados col-6 p-2">
+                        <div class="cont-work refugiados col-6">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Cena Solidaria</h4>
+                                <h4 class="text-center text-primary  p-2">Cena Solidaria</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid img-responsive" src="img/que-hacemos/cenaRefugiados.jpg" width="400">
                             </div>
                         </div>
-                        <div class="cont-work refugiados col-6 p-2">
+                        <div class="cont-work refugiados col-6">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Envíos de alimentos a refugiados en Grecia</h4>
+                                <h4 class="text-center text-primary  p-2">Envíos de alimentos a refugiados en Grecia</h4>
                             </div>
                             <div class="img-work">
                                 <img class="img-fluid img-responsive" src="img/que-hacemos/refugiados.jpg" width="400">
@@ -280,7 +256,7 @@ if (isset($_POST['email'])) {
                         <hr>
                         <div class="cont-work acompanamiento col-12">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Acompañamiento de casos</h4>
+                                <h4 class="text-center text-primary p-2">Acompañamiento de casos</h4>
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">Citas médicas u acompañamiento en el hospital</li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">Gestiones administrativas</li>
@@ -294,7 +270,7 @@ if (isset($_POST['email'])) {
                         <hr>
                         <div class="cont-work asocia col-12">
                             <div class="textos-work">
-                                <h4 class="text-center text-primary">Redes Asociativas</h4>
+                                <h4 class="text-center text-primary  p-2">Redes Asociativas</h4>
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">Protección Civil</li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">Cáritas</li>
@@ -313,39 +289,39 @@ if (isset($_POST['email'])) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="well well-sm">
-                            <form class="form-horizontal" action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
+                            <form class="form-horizontal" action="email/enviar.php" method="post">
                                 <fieldset>
                                     <div class="form-group align-items-center">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="fname" name="nombre" type="text" placeholder="First Name" class="form-control">
+                                            <input id="fname" name="nombre" type="text" placeholder="Nombre" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="lname" name="apellido" type="text" placeholder="Last Name" class="form-control">
+                                            <input id="lname" name="apellidos" type="text" placeholder="Apellidos" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                            <input id="email" name="email" type="text" placeholder="correo" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <input id="phone" name="telefono" type="text" placeholder="Phone" class="form-control">
+                                            <input id="phone" name="telefono" type="text" placeholder="nº tlf" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                                         <div class="col-md-12">
-                                            <textarea class="form-control" id="message" name="mensaje" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                            <textarea class="form-control" id="message" name="mensaje" placeholder="Escriba su mensaje..." rows="7"></textarea>
                                         </div>
                                     </div>
 
