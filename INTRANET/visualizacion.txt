@@ -1,0 +1,13 @@
+
+
+Inicio:     Visualizacion de estadísticas dsobre los beneficiarios
+Familias:   Visualizacion todas las familias de la asociacion
+Beneficiarios: Visualización de todos los beneficiarios de la asociacion.
+Documentos: Visualizacion de los documentos firmados por cada familia en la asocicion.
+niños:  Vidsualizacion de todos los niños del programa (<18)
+Voluntarios: Visualizacion de todos los voluntarios.
+
+
+Botones:
+
+Añadir, eliminar, modificar

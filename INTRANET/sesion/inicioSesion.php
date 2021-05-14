@@ -59,36 +59,48 @@ if (!empty($_POST['identificador']) && !empty($_POST['contrasenna'])) {
 </head>
 
 <body>
-    <h1>Solidaridad Esperanza</h1>
-    <h2>INICIA SESIÓN</h2>
-    <!-- DAMOS LA OPCION PARA REGISTRARSE -->
-    <span>o<a href="registro.php"> Registrarse </a></span>
-    <p></p>
-
-    <!-- FORMULARIO PARA INICIAR SESION -->
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="usuario">Nombre de Usuario: </label>
-        <input type="text" name="identificador" placeholder="Usuario" value="<?php if (isset($_COOKIE["identificador"])) {
-                                                                                    //OBTENEMOS LA COOKIE SI EXISTE
-                                                                                    echo $_COOKIE["identificador"];
-                                                                                } ?>">
+    <div class=" p-2 bg-primary">
+        <h1 class="text-center text-muted">Solidaridad Esperanza</h1>
+        <!-- DAMOS LA OPCION A INICIAR SESION -->
+        <span>
+            <h3 class="text-center text-muted">INICIA SESIÓN o<a href="registro.php"> Registrarse</a></h3>
+        </span>
         <p></p>
-        <label for="contrasenna">Contraseña: </label>
-        <input type="password" name="contrasenna" placeholder="Contraseña" value="<?php if (isset($_COOKIE["contrasenna"])) {
-                                                                                        //OBTENEMOS LA COOKIE SI EXISTE
-                                                                                        echo $_COOKIE["contrasenna"];
-                                                                                    } ?>">
-        <p></p>
-        <label><b>Recuérdame</b></label>
-        <input type="checkbox" name="recuerdame" <?php if (isset($_COOKIE["identificador"])) { //VERIFICAMOS SI ESTA CHECKEADO O NO CON LAS COOKIES 
-                                                    ?>checked<?php } ?>><br />
-        <input type="submit" value="Iniciar Sesión">
-    </form>
+    </div>
+    <div class="container">
+        <!-- FORMULARIO PARA REGISTRARTE -->
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="form-group p-3">
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="usuario">
+                        <h5>Nombre de Usuario: </h5>
+                    </label>
+                    <input class="form-control" type="text" name="identificador" placeholder="Usuario" required>
+                </div>
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="contrasenna">
+                        <h5>Contraseña: </h5>
+                    </label>
+                    <input class="form-control" type="password" name="contrasenna" placeholder="Contraseña" required>
+                </div>
+                <div class="col-3 col-sm-3 pt-2">
+                    <label>
+                        <h5>Recuérdame</h5>
+                    </label>
+                    <input type="checkbox" name="recuerdame" <?php if (isset($_COOKIE["identificador"])) { //VERIFICAMOS SI ESTA CHECKEADO O NO CON LAS COOKIES 
+                                                                ?>checked<?php } ?>><br />
+                </div>
 
-    <?php if (!empty($mnsj)) : ?>
-        <!-- EN CASO DE QUE NO COINCIDA MUESTRA ESTE MENSAJE -->
-        <p style="color:red"><?= $mnsj ?></p>
-    <?php endif; ?>
+                <input class="btn btn-outline-success" type="submit" value="Iniciar Sesión">
+            </div>
+        </form>
+
+        <?php if (!empty($mnsj)) : ?>
+            <!-- EN CASO DE QUE NO COINCIDA MUESTRA ESTE MENSAJE -->
+            <p style="color:red"><?= $mnsj ?></p>
+        <?php endif; ?>
+    </div>
+
 </body>
 
 </html>

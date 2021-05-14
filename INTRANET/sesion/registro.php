@@ -38,34 +38,50 @@ if (!empty($_POST['identificador']) && !empty($_POST['contrasenna']) && !empty($
 </head>
 
 <body>
-    <h1>Solidaridad Esperanza</h1>
-    <h2>REGISTRO</h2>
-    <!-- DAMOS LA OPCION A INICIAR SESION -->
-    <span>o<a href="inicioSesion.php"> Iniciar Sesión</a></span>
-    <p></p>
-    <!-- FORMULARIO PARA REGISTRARTE -->
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="usuario">Nombre de Usuario: </label>
-        <input type="text" name="identificador" placeholder="Usuario" required>
+    <div class=" p-2 bg-primary">
+        <h1 class="text-center text-muted">Solidaridad Esperanza</h1>
+        <!-- DAMOS LA OPCION A INICIAR SESION -->
+        <span>
+            <h3 class="text-center text-muted">REGISTRO o<a href="inicioSesion.php"> Iniciar Sesión</a></h3>
+        </span>
         <p></p>
-        <label for="email">Email: </label>
-        <input type="email" name="email" placeholder="Email" required>
-        <p></p>
-        <label for="contrasenna">Contraseña: </label>
-        <input type="password" name="contrasenna" placeholder="Contraseña" required>
-        <p></p>
-        <label for="confirmar_contrasenna">Repetir Contraseña: </label>
-        <input type="password" name="confirmar_contrasenna" placeholder="Repite la contraseña" required>
-        <p></p>
-        <label for="admin">¿Eres un Administrador?</label>
-        <input type="checkbox" name="tipo" value="administrador">
-        <p></p>
-        <input type="submit" value="Registrarse">
-    </form>
-    <!-- EN CASO DE QUE NO COINCIDA MUESTRA ESTE MENSAJE -->
-    <?php if (!empty($mnsj)) : ?>
-        <p style="color:red"><?= $mnsj ?></p>
-    <?php endif; ?>
+    </div>
+    <div class="container">
+        <!-- FORMULARIO PARA REGISTRARTE -->
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="row form-group p-3">
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="usuario">
+                        <h5>Nombre de Usuario: </h5>
+                    </label>
+                    <input class="form-control" type="text" name="identificador" placeholder="Usuario" required>
+                </div>
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="email">
+                        <h5>Email: </h5>
+                    </label>
+                    <input class="form-control" type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="contrasenna">
+                        <h5>Contraseña: </h5>
+                    </label>
+                    <input class="form-control" type="password" name="contrasenna" placeholder="Contraseña" required>
+                </div>
+                <div class="col-6 col-sm-5 pt-2">
+                    <label for="confirmar_contrasenna">
+                        <h5>Repetir Contraseña: </h5>
+                    </label>
+                    <input class="form-control" type="password" name="confirmar_contrasenna" placeholder="Repite la contraseña" required>
+                </div>
+            </div>
+            <input class="btn btn-outline-success" type="submit" value="Registrarse">
+        </form>
+        <!-- EN CASO DE QUE NO COINCIDA MUESTRA ESTE MENSAJE -->
+        <?php if (!empty($mnsj)) : ?>
+            <p style="color:red"><?= $mnsj ?></p>
+        <?php endif; ?>
+    </div>
 </body>
 
 </html>

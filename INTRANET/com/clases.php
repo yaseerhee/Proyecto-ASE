@@ -22,14 +22,25 @@ trait Identificable
 class Familia extends Dato
 {
     use Identificable;
+    private int $numero;
     private string $direccion;
     private string $representante;
 
-    public function __construct(int $id, string $direccion, string $representante)
+    public function __construct(int $id, int $numero, string $direccion, string $representante)
     {
         $this->setId($id);
+        $this->setNumero($numero);
         $this->setDireccion($direccion);
         $this->setRepresentante($representante);
+    }
+    public function getNumero(): int
+    {
+        return $this->numero;
+    }
+
+    public function setNumero(int $numero)
+    {
+        $this->numero = $numero;
     }
 
     public function getDireccion(): string

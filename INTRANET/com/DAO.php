@@ -198,7 +198,7 @@ class DAO
             $direccion = $rs[0]["direccion"];
             $representante = $rs[0]["representante"];
         }
-        return new Familia($id, $direccion, $representante);
+        return new Familia($id, $numero, $direccion, $representante);
     }
 
     public static function FamiliaGuardar(int $id, int $numero, string $direccion, string $representante): bool

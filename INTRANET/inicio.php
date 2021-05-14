@@ -15,14 +15,6 @@ if (isset($_SESSION["id_Usuario"])) {
     }
 }
 
-//SI NO TIENES LOS PERMISOS DE ADMINISTRADOR , NO TE DEJA HACER EL SORTEO
-if (isset($_REQUEST["noPermisos"])) {
-    echo "No tienes permisos para realizar un sorteo.<br>";
-}
-//SI NO EXITEN ÁRBITROS Y/O EQUIPOS NO SE PUEDE REALIZAR EL SORTEO
-if (isset($_REQUEST["noDatos"])) {
-    echo "No se puede realizar el sorteo si no hay árbitros y equipos registrados.<br>";
-}
 ?>
 
 
@@ -50,11 +42,27 @@ if (isset($_REQUEST["noDatos"])) {
                 <a class="navbar-brand" href="sesion/cerrarSesion.php">Cerrar Sesión</a>
             </div>
         </div>
+        <form class="row d-flex p-2">
+            <input class="col-7 form-control mr-sm-2" type="text" placeholder="Busca a la familia... ">
+            <button class="col-4 btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
     </nav>
     <div class="container">
         <!-- SALUDAMOS AL USUARIO  -->
         <h4 class="blockquote-footer text-success">Bienvenido: <em><?= $usuario[1] ?></h4>
-
+        <header>
+            <nav id="nav" class="nav1">
+                <nav class="navbar navbar-inverse bg-primary">
+                    <div class="container-fluid">
+                        <div class="row" id="enlaces">
+                            <button class="btn btn-primary btn-header"><a href="tables/familias/familiaListado.php" id="enlace-aboutUs">Familias</a></button>
+                            <button class="btn btn-primary btn-header"><a href="tables/beneficiarios/beneficiariosListado.php" id="enlace-trabajo">Beneficiarios</a></button>
+                            <button class="btn btn-primary btn-header"><a href="tables/voluntarios/voluntariosListado.php" id="enlace-contacto">Voluntarios</a></button>
+                        </div>
+                    </div>
+                </nav>
+            </nav>
+        </header>
     </div>
 
 
